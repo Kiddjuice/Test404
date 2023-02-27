@@ -11,15 +11,12 @@ export default class command extends BaseCommand {
     override execute = async ({ from, sender, message }: Message): Promise<void> => {
         const { bank, tag } = await this.client.DB.getUser(sender.jid)
         const buttons = [
-            {
-                buttonId: 'id1',
-                buttonText: { displayText: `${this.client.config.prefix}wallet` },
-                type: 1
-            }
-        ]
+            { buttonId: `${this.client.config.prefix}wallet`, buttonText: { displayText: 'wallet 👑' }, type: 1 },
+            { buttonId: `${this.client.config.prefix}bank`, buttonText: { displayText: 'bank 🔥' }, type: 1 }
+        ]  
         const buttonMessage = {
             text: `${bank}`,
-            footer: '',
+            footer: '404',
             buttons: buttons,
             headerType: 1
         }
