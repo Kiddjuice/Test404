@@ -14,6 +14,18 @@ export class UserSchema {
     @prop({ type: Number, required: true, default: 1 })
     public level!: number
 
+    @prop({ type: Number, required: true, default: 0 })
+    public wallet!: number
+
+    @prop({ type: Number, required: true, default: 0 })
+    public bank!: number
+
+    prop({ type: Number, required: true, default: 0 })
+    public lastDaily!: number
+
+    @prop({ type: Number, required: true, default: 0 })
+    public lastRob!: number
+
     @prop({ type: String, required: true })
     public tag!: string
 }
