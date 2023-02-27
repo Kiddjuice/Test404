@@ -24,20 +24,12 @@ export default class command extends BaseCommand {
         await this.client.DB.setGold(M.sender.jid, 1000)
         await this.client.DB.user.updateOne({ jid: M.sender.jid }, { $set: { lastDaily: Date.now() } })
         const buttons = [
-            {
-                buttonId: 'id1',
-                buttonText: { displayText: `${this.client.config.prefix}wallet` },
-                type: 1
-            },
-            {
-                buttonId: 'id2',
-                buttonText: { displayText: `${this.client.config.prefix}bank` },
-                type: 1
-            }
-        ]
+            { buttonId: `${this.client.config.prefix}wallet`, buttonText: { displayText: 'wallet 💳' }, type: 1 },
+            { buttonId: `${this.client.config.prefix}bank`, buttonText: { displayText: 'bank 🏦' }, type: 1 }
+        ]  
         const buttonMessage = {
             text: '1000 gold has been claimed',
-            footer: '',
+            footer: '404',
             buttons: buttons,
             headerType: 1
         }
