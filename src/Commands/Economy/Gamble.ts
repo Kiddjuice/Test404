@@ -19,12 +19,9 @@ export default class command extends BaseCommand {
         if (amount > wallet) return void M.reply(`Check your wallet`)
         const direction = args[1]
         const buttons = [
-            {
-                buttonId: 'id1',
-                buttonText: { displayText: `${this.client.config.prefix}wallet` },
-                type: 1
-            }
-        ]
+            { buttonId: `${this.client.config.prefix}wallet`, buttonText: { displayText: 'wallet 💳' }, type: 1 },
+            { buttonId: `${this.client.config.prefix}bank`, buttonText: { displayText: 'bank 🏦' }, type: 1 }
+        ]  
         const result = directions[Math.floor(Math.random() * directions.length)]
         await this.client.DB.setGold(M.sender.jid, result === direction ? amount : -amount)
         const sticker = await new Sticker(this.client.assets.get(result) as Buffer, {
@@ -36,7 +33,7 @@ export default class command extends BaseCommand {
         await M.reply(sticker, 'sticker')
         const buttonMessage = {
             text: result === direction ? `You won ${amount}` : `You lost ${amount}`,
-            footer: '',
+            footer: '404',
             buttons: buttons,
             headerType: 1
         }
