@@ -11,5 +11,4 @@ export interface IConfig {
     mods: string[]
     /**port number where the server will be started */
     PORT: number
-    casinoGroup: string
 }
