@@ -8,7 +8,6 @@ import { IArgs } from '../../Types'
     category: 'economy',
     cooldown: 25,
     exp: 20,
-    casino: true
 })
 export default class command extends BaseCommand {
     override execute = async (M: Message, { args }: IArgs): Promise<void> => {
