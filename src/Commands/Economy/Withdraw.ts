@@ -15,20 +15,12 @@ export default class command extends BaseCommand {
         await this.client.DB.setGold(M.sender.jid, -M.numbers[0], 'bank')
         await this.client.DB.setGold(M.sender.jid, M.numbers[0])
         const buttons = [
-            {
-                buttonId: 'id1',
-                buttonText: { displayText: `${this.client.config.prefix}wallet` },
-                type: 1
-            },
-            {
-                buttonId: 'id2',
-                buttonText: { displayText: `${this.client.config.prefix}bank` },
-                type: 1
-            }
-        ]
+            { buttonId: `${this.client.config.prefix}wallet`, buttonText: { displayText: 'wallet 💳' }, type: 1 },
+            { buttonId: `${this.client.config.prefix}bank`, buttonText: { displayText: 'bank 🏦' }, type: 1 }
+        ]  
         const buttonMessage = {
             text: `*${M.numbers[0]}* gold to ur wallet`,
-            footer: '',
+            footer: '404',
             buttons: buttons,
             headerType: 1
         }
