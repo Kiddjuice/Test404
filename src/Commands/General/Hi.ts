@@ -4,7 +4,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     description: 'Says hello to the bot',
     category: 'general',
     usage: 'hi',
-    aliases: ['hello'],
+    aliases: ['sup'],
     exp: 25,
     cooldown: 5
 })
